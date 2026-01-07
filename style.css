@@ -1,230 +1,172 @@
-/* ==========================================================================
-   1. VARIÁVEIS, RESET E ANIMAÇÕES
-   ========================================================================== */
+/********** Template Custom Properties **********/
 :root {
-    /* Paleta de Cores */
-    --cor-primaria: #002d5b;    /* Azul Industrial */
-    --cor-acento: #e67e22;      /* Laranja Faramilio */
-    --cor-sucesso: #25d366;     /* Verde WhatsApp */
-    --cor-branco: #ffffff;
-    --cor-fundo: #f8f9fa;
-    --cor-texto: #333333;
-    --cor-texto-suave: #666666;
-
-    /* Design System */
-    --altura-nav: 5rem;
-    --radius: 0.8rem;
-    --shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1);
-    --transicao: all 0.3s ease;
+    --primary: #0054A6; /* Ajustado para o azul da sua logo */
+    --secondary: #51545F;
+    --light: #F8F9FA;
+    --dark: #252525;
 }
 
-@keyframes fadeInSubir {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-html { scroll-behavior: smooth; font-size: 100%; }
-
+/********** Global Styles **********/
 body {
-    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-    line-height: 1.6;
-    padding-top: var(--altura-nav);
-    color: var(--cor-texto);
-    background-color: var(--cor-fundo);
-    overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--secondary);
 }
 
-/* Aplicar animação ao conteúdo principal de todas as páginas */
-main {
-    animation: fadeInSubir 0.8s ease-out forwards;
+h1, h2, .font-secondary {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
 }
 
-/* ==========================================================================
-   2. NAVEGAÇÃO (NAVBAR FIXA)
-   ========================================================================== */
-.navbar {
+.back-to-top {
     position: fixed;
-    top: 0; left: 0; width: 100%;
-    height: var(--altura-nav);
-    background-color: var(--cor-primaria);
+    display: none;
+    right: 90px; /* Movido para a esquerda para não sobrepor o WhatsApp */
+    bottom: 20px;
+    z-index: 99;
+}
+
+/********** Navbar e Logos **********/
+.navbar-light .navbar-nav .nav-link {
+    font-family: 'Quicksand', sans-serif;
+    position: relative;
+    padding: 35px 15px;
+    font-weight: 500;
+    color: var(--dark);
+    outline: none;
+    transition: .5s;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+/* Ajuste da Logo SVG no Navbar */
+.navbar-brand img {
+    max-height: 55px;
+    width: auto;
+    transition: .5s;
+}
+
+.sticky-top.navbar-light .navbar-brand img {
+    max-height: 45px;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link {
+        padding: 10px 0;
+    }
+    .navbar-brand img {
+        max-height: 45px;
+    }
+}
+
+/********** WhatsApp Fixo (Estilo DNR) **********/
+.whatsapp-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: #ffffff !important;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 5vw;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.logo a { display: flex; align-items: center; height: 100%; }
-.logo svg { height: 3.2rem; width: auto; }
-
-.menu-toggle {
-    background: none; border: none;
-    color: var(--cor-branco);
-    font-size: 2rem; cursor: pointer;
-}
-
-.nav-links {
-    position: absolute;
-    top: var(--altura-nav); left: 0; width: 100%;
-    background-color: var(--cor-primaria);
-    display: none;
-    flex-direction: column;
-    list-style: none;
-    padding: 1rem 0;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.nav-links.active { display: flex; }
-.nav-links li { text-align: center; padding: 1rem 0; }
-.nav-links a {
-    color: var(--cor-branco);
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: 2px 4px 15px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: all 0.3s ease-in-out;
     text-decoration: none;
-    font-weight: 500;
-    transition: var(--transicao);
 }
 
-/* ==========================================================================
-   3. COMPONENTES REUTILIZÁVEIS (CARDS E HERO)
-   ========================================================================= */
-.services-hero {
-    background-color: var(--cor-primaria);
-    color: var(--cor-branco);
-    text-align: center;
-    padding: 4rem 5vw;
+.whatsapp-fixed:hover {
+    transform: scale(1.1);
+    background: #128C7E;
+    color: #ffffff !important;
+    box-shadow: 2px 4px 20px rgba(0,0,0,0.5);
 }
 
-.grid-services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+/********** Page Header **********/
+.page-header {
+    background: linear-gradient(rgba(0, 84, 166, .7), rgba(0, 84, 166, .7)), url(../img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
 }
 
-.card {
-    background: var(--cor-branco);
-    padding: 2.5rem 1.5rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    text-align: center;
-    transition: var(--transicao);
+.breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, .5);
 }
 
-.card:hover { transform: translateY(-5px); }
-.card h3 { color: var(--cor-primaria); margin: 1rem 0; }
-
-/* ==========================================================================
-   4. CARROSSEL (MOBILE-FIRST)
-   ========================================================================== */
-.carousel-container {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    background: #eee;
-    padding: 2rem 0;
+/********** Service Items **********/
+.service-item {
+    transition: .5s;
+    border-radius: 10px;
+    border-bottom: 3px solid transparent;
 }
 
-.carousel-track { display: flex; gap: 1rem; padding: 0 10vw; }
-
-.carousel-item {
-    flex: 0 0 80vw;
-    scroll-snap-align: center;
-    position: relative;
+.service-item:hover {
+    margin-top: -10px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    border-color: var(--primary);
 }
 
-.carousel-item img {
-    width: 100%; height: 20rem;
-    object-fit: cover;
-    border-radius: var(--radius);
-}
-
-.carousel-item span {
-    position: absolute; bottom: 1rem; left: 1rem;
-    background: rgba(0, 45, 91, 0.9);
-    color: white; padding: 0.5rem 1rem;
-    border-radius: 0.4rem; font-size: 0.8rem;
-}
-
-/* ==========================================================================
-   5. SECÇÕES ESPECÍFICAS (SOBRE / CONTACTO / SERVIÇOS)
-   ========================================================================== */
-.about-content { display: flex; flex-direction: column; gap: 3rem; padding: 4rem 5vw; }
-.about-image img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); }
-
-.stats-box { display: flex; gap: 2rem; margin-top: 2rem; }
-.stat strong { display: block; font-size: 2rem; color: var(--cor-acento); }
-
-.contact-methods { 
+.service-icon {
+    margin-top: -30px;
+    width: 60px;
+    height: 60px;
     display: flex;
-    flex-direction: column; 
-    gap: 1.5rem; 
-    margin-top: 3rem; 
-    padding-left: 2rem; 
-    padding-right: 2rem; 
-}
-.contact-card {
-    background: white; padding: 2rem; border-radius: var(--radius);
-    text-decoration: none; color: inherit; box-shadow: var(--shadow);
-    transition: var(--transicao); border-top: 4px solid var(--cor-primaria);
-}
-.contact-card.whatsapp { border-top-color: var(--cor-sucesso); }
-.contact-card:hover { transform: scale(1.02); }
-
-/* Diferencial Técnico */
-.technical-diff {
-    background: var(--cor-primaria); color: white;
-    padding: 3rem; border-radius: var(--radius);
-    margin-top: 4rem; position: relative; overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border-radius: 60px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .1);
 }
 
-.diff-list { list-style: none; margin-top: 1.5rem; }
-.diff-list li { margin-bottom: 1rem; padding-left: 1.5rem; position: relative; }
-.diff-list li::before { content: "✓"; position: absolute; left: 0; color: var(--cor-acento); font-weight: bold; }
-
-/* ==========================================================================
-   6. BOTÃO WHATSAPP E FOOTER
-   ========================================================================== */
-.whatsapp-float {
-    position: fixed; bottom: 2rem; right: 2rem;
-    width: 3.5rem; height: 3.5rem;
-    background: var(--cor-sucesso); color: white;
-    border-radius: 50%; display: flex;
-    justify-content: center; align-items: center;
-    z-index: 2000; box-shadow: var(--shadow);
-    transition: var(--transicao);
-}
-.whatsapp-float:hover { transform: scale(1.1); }
-
-.main-footer {
-    background: var(--cor-primaria); color: rgba(255,255,255,0.7);
-    padding: 3rem; text-align: center; margin-top: 4rem;
-    border-top: 4px solid var(--cor-acento);
+/********** Buttons **********/
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
 }
 
-/* ==========================================================================
-   7. MEDIA QUERIES (DESKTOP)
-   ========================================================================== */
-@media (min-width: 48rem) {
-    .menu-toggle { display: none; }
-    
-    .nav-links {
-        display: flex; position: static; width: auto;
-        flex-direction: row; background: none; border: none;
-    }
-    
-    .nav-links li { margin-left: 2rem; }
-    .nav-links a:hover { color: var(--cor-acento); }
-
-    .carousel-item { flex: 0 0 30%; }
-    
-    .about-content { flex-direction: row; align-items: center; }
-    .about-text, .about-image { flex: 1; }
-
-    .contact-methods { flex-direction: row; }
+.btn-primary:hover {
+    background-color: #004285;
+    border-color: #004285;
 }
 
-/* Utilidade: Esconder WhatsApp na página de contacto */
-body.pagina-contacto .whatsapp-float { display: none; }
+/********** Footer **********/
+.footer {
+    color: #B0B9AE;
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #B0B9AE;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    color: var(--light);
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}

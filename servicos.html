@@ -1,103 +1,114 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FARAMILIO Consultoria Técnica - Especialista em manutenção de máquinas de salgados e panificação com experiência PepsiCo.">
-    <meta property="og:title" content="FARAMILIO | Consultoria Técnica">
-    <meta property="og:description" content="Reparação e manutenção especializada de máquinas industriais. Soluções rápidas e precisas.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="link-para-uma-foto-da-maquina.jpg">    
-    <title>Serviços Técnicos | FARAMILIO</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta charset="utf-8">
+    <title>Serviços - Faramilio Consultoria</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    
+    <meta name="description" content="Conheça nossos serviços de manutenção preventiva, montagem de linhas de produção e otimização de máquinas de snacks.">
+    <meta property="og:title" content="Serviços Especializados | Faramilio Consultoria">
+    <meta property="og:image" content="img/logo-azul.svg">
 
-    <script type="application/ld+json">
-        {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "FARAMILIO Consultoria Técnica",
-        "image": "favicon.svg",
-        "@id": "https://teusite.com",
-        "url": "https://teusite.com",
-        "telephone": "+351900000000", 
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Rua Exemplo, 123",
-            "addressLocality": "Sua Cidade",
-            "addressRegion": "Região",
-            "postalCode": "0000-000",
-            "addressCountry": "PT"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 0.0000,
-            "longitude": 0.0000
-        },
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-            ],
-            "opens": "08:00",
-            "closes": "18:00"
-        },
-        "sameAs": [
-            "https://www.instagram.com/faramilio",
-            "https://www.linkedin.com/in/odair-faramilio"
-        ],
-        "description": "Consultoria técnica especializada em máquinas de salgados e panificação. Manutenção com padrão de qualidade PepsiCo conduzida pelo especialista Sr. Odair."
-        }
-    </script>
+    <link href="img/favicon.svg" rel="icon" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Quicksand:wght@600;700&display=swap" rel="stylesheet"> 
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
 </head>
+
 <body>
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Carregando...</span>
+        </div>
+    </div>
 
-    <script src="componentes.js"></script>
+    <div id="navbar-placeholder"></div>
 
-    <header class="services-hero">
-        <h1>Soluções em Manutenção Industrial</h1>
-        <p>Especialista em equipamentos de panificação e linhas de salgados.</p>
-    </header>
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            <h1 class="display-3 text-white mb-4 animated slideInDown">Nossos Serviços</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+                    <li class="breadcrumb-item active text-primary" aria-current="page">Serviços</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
 
-    <main class="container-services">
-        <div class="grid-services">
-            <div class="card">
-                <div class="icon-circle">⚙️</div>
-                <h3>Modeladoras</h3>
-                <p>Ajuste de gramagem, manutenção de motores e limpeza técnica profunda para garantir o formato perfeito do salgado.</p>
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-6">
+                    <p><span class="text-primary me-2">#</span>Soluções Industriais</p>
+                    <h1 class="display-5 mb-0">Especialidade em Linhas de <span class="text-primary">Produção de Snacks</span></h1>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <a class="btn btn-primary rounded-pill py-3 px-5" href="contato.html">Solicitar Orçamento</a>
+                </div>
             </div>
-            <div class="card">
-                <div class="icon-circle">🍞</div>
-                <h3>Empanadoras</h3>
-                <p>Reparação de esteiras e sistemas de cortina de líquido, evitando desperdício de farinha e excesso de óleo.</p>
-            </div>
-            <div class="card">
-                <div class="icon-circle">🔥</div>
-                <h3>Fritadeiras Industriais</h3>
-                <p>Manutenção de queimadores, resistências e sistemas de filtragem de óleo para frituras uniformes.</p>
-            </div>
-            <div class="card">
-                <div class="icon-circle">🛠️</div>
-                <h3>Preventiva Total</h3>
-                <p>Planos mensais para evitar paragens inesperadas que custam caro à sua produção.</p>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item bg-light overflow-hidden h-100 p-4 pt-0">
+                        <div class="service-icon">
+                            <i class="fa fa-tools fa-3x text-primary"></i>
+                        </div>
+                        <h4 class="mb-3">Manutenção Preventiva</h4>
+                        <p>Evite paradas inesperadas na sua produção com um cronograma rigoroso de revisão mecânica e elétrica.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item bg-light overflow-hidden h-100 p-4 pt-0">
+                        <div class="service-icon">
+                            <i class="fa fa-cogs fa-3x text-primary"></i>
+                        </div>
+                        <h4 class="mb-3">Montagem de Máquinas</h4>
+                        <p>Instalação e setup completo de extrusoras, fritadeiras e linhas de embalagem para snacks.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item bg-light overflow-hidden h-100 p-4 pt-0">
+                        <div class="service-icon">
+                            <i class="fa fa-chart-line fa-3x text-primary"></i>
+                        </div>
+                        <h4 class="mb-3">Otimização de Processos</h4>
+                        <p>Análise técnica para aumentar a velocidade da linha e reduzir desperdício de matéria-prima.</p>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
 
-        <section class="technical-diff">
-            <div class="diff-content">
-                <h2>Porquê escolher a Consultoria FARAMILIO?</h2>
-                <ul class="diff-list">
-                    <li><strong>Diagnóstico de Precisão:</strong> Identificação da causa raiz da avaria, não apenas do sintoma.</li>
-                    <li><strong>Padrão de Qualidade PepsiCo:</strong> Aplicação de metodologias de manutenção de grandes multinacionais.</li>
-                    <li><strong>Peças e Componentes:</strong> Orientação técnica sobre as melhores peças de reposição do mercado.</li>
-                </ul>
-            </div>
-        </section>
-    </main>
+    <a href="https://wa.me/5511972599500" class="whatsapp-fixed" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-    </body>
+    <div id="footer-placeholder"></div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <script src="js/componente.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
 </html>
